@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>スーパーの胸</title>
+		<style>
+			/*body*/
+			body {
+				width:100%;
+				height:500px;
+				margin: 20px auto;
+				background-color:#f7e9c7;
+			}
+			/*melon*/
+			.melon {
+				display: inline-block;
+				width: 450px;
+				height: 450px;
+				margin: 0;
+				border-radius: 50%;
+				position: relative;
+				background: radial-gradient(circle at 50% 40%, #f7e9c7);
+				border: 1px #a58863 solid;
+				border-top-color:#f7e9c7;
+				float:left;
+				animation: move-melon 0.5s ease-out infinite;
+
+			}
+			.melon:after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+				transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+			}
+
+			/*nipple*/
+			.nipple {
+				width: 130px;
+				height: 100px;
+				margin: 300px 0 0 190px;
+				border-top-color:#f7e9c7;
+				border-radius:50%;
+				position: absolute;
+				animation: move-nipple 0.5s ease-out infinite;
+				transform:  skewX(-5deg) ;
+				transform-style: preserve-3d;
+				transform: rotateY(10deg);
+				background: radial-gradient(circle,#e8c897 25%, #f7e9c7);
+			}
+			.nipple:before {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 37.5%;
+				height: 37.5%;
+				border-radius: 50%;
+				top: 31.25%;
+				left: 31.25%;
+				background-color:#d3babb;
+				border:#a58863 1px solid;
+			}
+			.nipple:after {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 31.25%;
+				height: 31.25%;
+				border-radius: 50%;
+				top: 0%;
+				left: 18.75%;
+				background: rgba(255, 255, 255, 0.2);
+			}
+
+
+			/*tits*/
+			.tits {
+				width: 950px;
+				height: 300px;
+				margin: 120px auto;
+				perspective: 1200px;
+				perspective-origin: 50% 50%;
+				transform-style: preserve-3d;
+				transform: rotateY(30deg);
+			}
+
+			.tits:after{
+				content: ".";
+				display: block;
+				height: 0;
+				font-size:0
+				clear: both;
+				visibility:hidden;
+			}
+
+			/*animation*/
+			@keyframes move-nipple {
+				0% {
+				transform: none;
+				}
+				70%{
+				transform: translateY(-25px)  scaleX(0.95);
+				}
+				100% {
+				transform: none;
+				}
+			}
+			@keyframes move-melon {
+				0% {
+				transform: none;
+				}
+				50%{
+				transform: translateY(-50px)scaleX(0.95);
+				}
+				100% {
+				transform: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tits">
+			<figure class="melon">
+				<a onClick="sound()">
+					<span class="nipple"></span>
+				</a>
+			</figure>
+			<figure class="melon">
+				<a onClick="sound()">
+					<span class="nipple"></span>
+				</a>
+			</figure>
+		</div>
+		<audio id="sound-file" preload="auto">
+			<source src="ha-ha-2.wav" type="audio/wav">
+		</audio>
+		<audio src="ha-ha-.wav" autoplay loop></audio>
+		<script>
+			function sound(){
+				document.getElementById( 'sound-file' ).play() ;
+			}
+		</script>
+	</body>
+</html>
